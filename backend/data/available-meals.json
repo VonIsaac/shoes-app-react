@@ -1,0 +1,142 @@
+[
+  {
+    "id": "s1",
+    "name": "Nike Air Zoom GT Cut",
+    "price": "4,995",
+    "description": "The first of Nike's new GT series, the Air Zoom GT Cut is a low-profile high-performance basketball shoe reminiscent of the Kobe 8.",
+    "image": "images/GT-Cut-1.jpg" 
+  },
+  {
+    "id": "s2",
+    "name": "Nike G.T. Cut 2",
+    "price": "5,679",
+    "description": "The G.T. Cut 2 helps you stop in an instant and accelerate back into the open lane in a low-to-the-ground design that helps minimise court contact while switching direction",
+    "image": "images/gt-cut-2.png"
+  },
+  {
+    "id": "s3",
+    "name": "Freak 5 EP",
+    "price": "7.99",
+    "description": "Enter the Freak 5. Stacked with stunning speed for super-quick first steps, stuffed with that sort of springy cushioning that can withstand the all-game grind.",
+    "image": "images/freak-5.jpg"
+  },
+  {
+    "id": "s4",
+    "name": "LeBron XXI 'Abalone' EP",
+    "price": "11,295",
+    "description": "The LeBron XXI has a cabling system that works with Zoom Air cushioning and a light, low-to-the-ground design.",
+    "image": "images/lebron-xxi.png"
+  },
+  {
+    "id": "s5",
+    "name": "Luka 2 'The Pitch' PF",
+    "price": "5,919",
+    "description": "The Pitch' is an homage to Luka's time as a pro baller in Madrid and his childhood hero's iconic boots.",
+    "image": "images/luka-2.jpg"
+  },
+  {
+    "id": "s6",
+    "name": "Tatum 1 'Denim' PF",
+    "price": "5,519",
+    "description": "Jayson Tatum is known for his off-court looks as much as his on-court moves (well, almost).",
+    "image": "images/tatum-1.png"
+  },
+  {
+    "id": "s7",
+    "name": "Zion 1 x Naruto",
+    "price": "7,095.00",
+    "description": "Believe it! Inspired by Naruto's heroics, this special Zion 1 combines his chakra with the latest in on-court tech.",
+    "image": "images/zion-1-x-naruto.jpg"
+  },
+  {
+    "id": "s8",
+    "name": "Nike Air Force 1 '07",
+    "price": "5,495",
+    "description": "The radiance lives on in the Nike Air Force 1 '07, the basketball original that puts a fresh spin on what you know best.",
+    "image": "images/air-force-1.png"
+  },
+  {
+    "id": "s9",
+    "name": "AIR JORDAN I",
+    "price": "7,239.90",
+    "description": "Jordan Brand is celebrating the release of Spider-Man: Into the Spider-Verse with a special edition Air Jordan 1 Retro High OG.",
+    "image": "images/air-jordan-1.jpg"
+  },
+  {
+    "id": "s10",
+    "name": "Nike SB Dunk Low Premium",
+    "price": "6,895",
+    "description": "The '80s b-ball icon returns with mixed materials and hoops flair. Channelling vintage style back onto the streets.",
+    "image": "images/sb-dunk.png"
+  },
+  {
+    "id": "s11",
+    "name": "ANTA KAI 1",
+    "price": "6,963.81",
+    "description": "With the ANTA KAI 1, quick cuts come with ease, echoing Kyrie's own agility in outmaneuvering his opponents.",
+    "image": "images/antai kai 1.jpg"
+  },
+  {
+    "id": "s12",
+    "name": "Nike Air Max 90 LV8",
+    "price": "8.99",
+    "description": "Fluffy pancakes stacked high, drizzled with maple syrup and topped with fresh berries.",
+    "image": "images/pancake-stack.jpg"
+  },
+  {
+    "id": "s13",
+    "name": "Nike Icon Classic SE",
+    "price": "3,695",
+    "description": "This strappy take on the classic AF-1 is just as easy to wear as your favourite sneakers",
+    "image": "images/air-max-90.png"
+  },
+  {
+    "id": "s14",
+    "name": "AE1",
+    "price": "5,900",
+    "description": "Anthony Edwards adidas Basketball shoes have officially been unveiled.",
+    "image": "images/AE1.jpg"
+  },
+  {
+    "id": "s15",
+    "name": "Nike Precision 6 FlyEase",
+    "price": "3,495",
+    "description": "Create space, stop in an instant, shoot off the dribble in the Nike Precision 6 FlyEase.",
+    "image": "images/precision-6.png"
+  },
+  {
+    "id": "s16",
+    "name": "Nike G.T. Cut 3 EP",
+    "price": "10,295",
+    "description": "How can you separate your game when it's winning time? Start by lacing up in the G.T. Cut 3.",
+    "image": "images/gt-cut-3.jpg"
+  },
+  {
+    "id": "s17",
+    "name": "Nike Dunk Low",
+    "price": "3,895",
+    "description": "The Nike Dunk Low is an easy score for your wardrobe.",
+    "image": "images/dunk-low.png"
+  },
+  {
+    "id": "s18",
+    "name": "Nike Go FlyEase",
+    "price": "11.99",
+    "description": " These kicks feature Nike's revolutionary FlyEase technology, making on-and-off a breeze.",
+    "image": "images/go-flyease-easy.png"
+  },
+  {
+    "id": "s19",
+    "name": "KD16 ASW EP",
+    "price": "8,395",
+    "description": " He'd be just as happy playing casual all afternoon as he would be dropping 40-pieces in the playoffs.",
+    "image": "images/kd16-asw-ep.png"
+  },
+  {
+    "id": "s20",
+    "name": "Book 1 EP",
+    "price": "7,895",
+    "description": "Book's signature shoe gives him the tools he needs to carve.",
+    "image": "images/book-1.png"
+  }
+]
