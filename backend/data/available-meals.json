@@ -1,10 +1,10 @@
 [
   {
     "id": "s1",
-    "name": "Nike Air Zoom GT Cut",
+    "name": "Nike GT Cut",
     "price": "4,995",
     "description": "The first of Nike's new GT series, the Air Zoom GT Cut is a low-profile high-performance basketball shoe reminiscent of the Kobe 8.",
-    "image": "images/GT-Cut-1.jpg" 
+    "image": "images/NIKE_GT_CUT_1.png" 
   },
   {
     "id": "s2",
@@ -22,14 +22,14 @@
   },
   {
     "id": "s4",
-    "name": "LeBron XXI 'Abalone' EP",
+    "name": "LeBron XXI ",
     "price": "11,295",
     "description": "The LeBron XXI has a cabling system that works with Zoom Air cushioning and a light, low-to-the-ground design.",
     "image": "images/lebron-xxi.png"
   },
   {
     "id": "s5",
-    "name": "Luka 2 'The Pitch' PF",
+    "name": "Luka 2",
     "price": "5,919",
     "description": "The Pitch' is an homage to Luka's time as a pro baller in Madrid and his childhood hero's iconic boots.",
     "image": "images/luka-2.jpg"
@@ -50,7 +50,7 @@
   },
   {
     "id": "s8",
-    "name": "Nike Air Force 1 '07",
+    "name": "Nike Air Force",
     "price": "5,495",
     "description": "The radiance lives on in the Nike Air Force 1 '07, the basketball original that puts a fresh spin on what you know best.",
     "image": "images/air-force-1.png"
@@ -64,7 +64,7 @@
   },
   {
     "id": "s10",
-    "name": "Nike SB Dunk Low Premium",
+    "name": "Nike SB Dunk Low",
     "price": "6,895",
     "description": "The '80s b-ball icon returns with mixed materials and hoops flair. Channelling vintage style back onto the streets.",
     "image": "images/sb-dunk.png"
@@ -74,39 +74,39 @@
     "name": "ANTA KAI 1",
     "price": "6,963.81",
     "description": "With the ANTA KAI 1, quick cuts come with ease, echoing Kyrie's own agility in outmaneuvering his opponents.",
-    "image": "images/antai kai 1.jpg"
+    "image": "images/ANTA KYRIE.jpg"
   },
   {
     "id": "s12",
-    "name": "Nike Air Max 90 LV8",
-    "price": "8.99",
-    "description": "Fluffy pancakes stacked high, drizzled with maple syrup and topped with fresh berries.",
-    "image": "images/pancake-stack.jpg"
+    "name": "Nike Air Max 90",
+    "price": "7,895",
+    "description": "The Air Max 90 LV8 takes your favourite silhouette to the next level with stacked Nike Air units. .",
+    "image": "images/air-max-90.png"
   },
   {
     "id": "s13",
     "name": "Nike Icon Classic SE",
     "price": "3,695",
     "description": "This strappy take on the classic AF-1 is just as easy to wear as your favourite sneakers",
-    "image": "images/air-max-90.png"
+    "image": "images/icon-classic.png"
   },
   {
     "id": "s14",
-    "name": "AE1",
-    "price": "5,900",
-    "description": "Anthony Edwards adidas Basketball shoes have officially been unveiled.",
-    "image": "images/AE1.jpg"
+    "name": "JA 1 ASW EP",
+    "price": "7,395",
+    "description": "All my life, my parents worked for a check. Now I'm proud to say I work for the check.",
+    "image": "images/JA-1.png"
   },
   {
     "id": "s15",
-    "name": "Nike Precision 6 FlyEase",
+    "name": "Nike Precision 6",
     "price": "3,495",
     "description": "Create space, stop in an instant, shoot off the dribble in the Nike Precision 6 FlyEase.",
     "image": "images/precision-6.png"
   },
   {
     "id": "s16",
-    "name": "Nike G.T. Cut 3 EP",
+    "name": "Nike G.T. Cut 3",
     "price": "10,295",
     "description": "How can you separate your game when it's winning time? Start by lacing up in the G.T. Cut 3.",
     "image": "images/gt-cut-3.jpg"
