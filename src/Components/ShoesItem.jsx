@@ -3,7 +3,7 @@ import React from "react";
 
 export default function ShoesItem({shoes}){
     const cssClases = 'text-gray-300 bg-neutral-500 py-2 px-1 rounded my-3 w-20 font-bold text-sm transition ease-out delay-150 hover:bg-stone-500  duration-300 ... ';
-    const cssClasesLi = " border-solid py-4 mt-9 px-4 bg-stone-700 w-4/5 rounded-xl shadow-md flex flex-col justify-between ";
+    const cssClasesLi = " border-solid py-4 mt-9 px-4 bg-stone-700 w-4/5 rounded-xl shadow-md  ";
 
     const ctxShoesContex = React.useContext(ShoesContex);
 

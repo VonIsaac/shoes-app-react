@@ -4,14 +4,11 @@ import { CartFunctionProvider } from "./Store/ShoesCartContext";
 function App() {
   return (
     <>
-    <CartFunctionProvider>
-      <main className=" bg-zinc-800 scroll-smooth max-h-full">
-        
-          <Header />
-          <Shoes />
-        
-        
-      </main>
+      <CartFunctionProvider>
+          <main className=" bg-zinc-800 scroll-smooth max-h-full">
+            <Header />
+            <Shoes />
+          </main>
       </CartFunctionProvider> 
     </>
   );

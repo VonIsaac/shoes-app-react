@@ -35,7 +35,7 @@ export default  function Shoes(){
   
 
     return(
-        <ul  className="grid grid-rows-5 grid-flow-col gap-2">
+        <ul  className="grid grid-rows-7 grid-flow-col gap-2">
             {fetchingImage.map((shoes) => (
                 <ShoesItem key={shoes.id} shoes={shoes}/>
             ))}

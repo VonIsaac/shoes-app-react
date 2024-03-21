@@ -29,8 +29,30 @@ function shoesCart(state, action){
         return {...state, items: updateShoes}
     }
 
+        if(action.type === 'REMOVE_SHOES'){
+            const existingShoesItem = state.items.findIndex((item) => item.id === action.id);
+            
+            const existingShoesCart = [existingShoesItem];
+
+            const updateShoes = [...state.items]
+
+            if(existingShoesCart.quantity === 1){
+                updateShoes.splice(existingShoesItem, 1)
+            }else{
+               const  updatedCartItem ={
+                    ...existingShoesCart,
+                    quantity: existingShoesCart.quantity - 1
+                }
+
+                updateShoes[existingShoesItem] = updatedCartItem
+            }
+
+            return{...state, items: updateShoes}
+
+        }
 
 
+        return state;
 
 }
 
@@ -47,11 +69,20 @@ export function CartFunctionProvider({children}){
             type: 'ADD_SHOES',
             item: item
         })
+    };
+
+
+    function removeItem(id){
+        dispatch({
+            type: 'REMOVE_SHOES',
+            id: id
+        })
     }
 
     const cartContext = {
         addItem: addItem,
-        items: cart.items
+        items: cart.items,
+        removeItem: removeItem
     }
 
     console.log(cartContext)
