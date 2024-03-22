@@ -32,7 +32,7 @@ function shoesCart(state, action){
         if(action.type === 'REMOVE_SHOES'){
             const existingShoesItem = state.items.findIndex((item) => item.id === action.id);
             
-            const existingShoesCart = [existingShoesItem];
+            const existingShoesCart = state.items[existingShoesItem];
 
             const updateShoes = [...state.items]
 

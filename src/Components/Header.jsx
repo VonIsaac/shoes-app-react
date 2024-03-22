@@ -1,14 +1,21 @@
 import Shoes from '../assets/nike.jpg'
 import ShoesContex from '../Store/ShoesCartContext.jsx';
 import React from 'react';
-
+import ShoesCartProviderContex from '../Store/CartShoesProvider.jsx';
 export default function Header(){
 
   const ctxShoesContex = React.useContext(ShoesContex);
 
   const totalAddShoes = ctxShoesContex.items.reduce((totalItem, item) => {
     return totalItem + item.quantity;
-  }, 0)
+  }, 0);
+
+
+  const ctxCart = React.useContext(ShoesCartProviderContex)
+
+    function handleShoesCart(){
+      ctxCart.showCart()
+    }
 
 
     return(
@@ -21,7 +28,7 @@ export default function Header(){
 
         
           <div className=' ml-auto mr-10 my-[70px] '>  
-             <button className=' text-gray-500 font-medium text-3xl' >Cart({totalAddShoes})</button>
+             <button className=' text-gray-500 font-medium text-3xl' onClick={handleShoesCart}>Cart({totalAddShoes})</button>
             </div>
         </header>
     )
