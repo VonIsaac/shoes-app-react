@@ -15,9 +15,22 @@ export default function Checkout(){
 
 
     function handleSubmit(e){
-        e.preventDeafault()
+        e.preventDefault()
         const fd = new FormData(e.target);
         const customData = Object.fromEntries(fd.entries())
+
+        fetch('http://localhost:3000/orders', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                order:{
+                    items: ctxContex.items,
+                    customer: customData
+                }
+            })
+        })
     }
 
 
@@ -29,17 +42,22 @@ export default function Checkout(){
                     <h2 className="  my-2 text-2xl">Checkout</h2>
                     <p className=" font-normal pb-4">Total Amount: {shoesTotal}</p>
 
-                    <Input label= "Full Name:" id="full-name" type ="text"  />
+                    <Input label= "Full Name:" id="name" type ="text"  />
                     <Input label= "Email Adress:" type = "email" id= "email"/>
                     <Input label= "Street" type = "text" id= "street"/>
 
                     <div className=" flex gap-4 mb-3">
-                        <Input label= "Postal Code" type = "text" id= "posta-code" />
+                        <Input label= "Postal Code" type = "text" id= "postal-code" />
                         <Input label= "City" type = "text" id= "city" />
                     </div>
 
                     <div className=" gap-3 flex" >
-                        <button onClick={handleCloseModal} className=" bg-neutral-500 p-1  font-medium  hover:text-neutral-400" >Close</button>
+                        <button
+                            type="button" 
+                            onClick={handleCloseModal} 
+                            className=" bg-neutral-500 p-1  font-medium  hover:text-neutral-400" >
+                            Close
+                        </button>
                         <button className = {cssClases}>Submit Order</button>
                     </div>
                 </form>     

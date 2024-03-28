@@ -39,7 +39,7 @@ export default function Cart(){
 
           <Modal 
             open={cxtCartProgres.progress === 'cart'}
-            onCLose={cxtCartProgres.progress === 'cart' && handleCloseModal}
+            onCLose={cxtCartProgres.progress === 'cart' ? handleCloseModal: undefined}
           >
             
             <h2 className=" text-xl font-semibold text-center mt-2">Your Cart</h2>
