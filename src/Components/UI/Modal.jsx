@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 
 
 
-export default function Modal({children, open}){
+export default function Modal({children, open, onCLose}){
     const openModal = React.useRef();
 
     React.useEffect(() => {
@@ -16,8 +16,13 @@ export default function Modal({children, open}){
 
     }, [open])
 
+
+
     return createPortal(
-        <dialog ref={openModal} className=" border-solid p-2 bg-neutral-500 w-[20%] h-[30%] rounded-sm">
+        <dialog ref={openModal}
+            onClose={onCLose}     
+            className=" border-solid p-2 bg-neutral-500 w-[32%] h-[38%] rounded-lg backdrop:bg-stone-900/90"
+         >
             {children}
         </dialog>,
         document.getElementById('modal')

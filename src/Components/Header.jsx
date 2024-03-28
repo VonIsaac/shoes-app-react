@@ -6,10 +6,10 @@ export default function Header(){
 
   const ctxShoesContex = React.useContext(ShoesContex);
 
-  const totalAddShoes = ctxShoesContex.items.reduce((totalItem, item) => {
-    return totalItem + item.quantity;
-  }, 0);
-
+  const totalAddShoes = ctxShoesContex.items.reduce((totalItem, item) =>{
+    return totalItem + item.quantity
+  },0);
+  
 
   const ctxCart = React.useContext(ShoesCartProviderContex)
 
