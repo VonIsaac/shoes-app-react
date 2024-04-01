@@ -2,8 +2,16 @@ import Modal from "./UI/Modal";
 import ShoesCartContex from "../Store/ShoesCartContext.jsx";
 import ShoesCartProviderContex from "../Store/CartShoesProvider.jsx";
 import Input from "./UI/Input.jsx";
+import ModalDone from "./UI/ModalDone.jsx";
 import React from "react";
+
+
 export default function Checkout(){
+    const [isFetching, setIsFetching] = React.useState()
+   // const [isOpenModal, setIsOpenModal] = React.useState(true)
+
+    
+
     const ctxCartShoes = React.useContext(ShoesCartProviderContex)
     const ctxContex = React.useContext(ShoesCartContex)
 
@@ -13,13 +21,19 @@ export default function Checkout(){
         ctxCartShoes.hideCheckout()
     }
 
+    function handleCLearShoes(){
+        ctxCartShoes.hideCheckout()
+        ctxContex.clearShoes()
+        setIsFetching()
+    }
 
+ 
     function handleSubmit(e){
         e.preventDefault()
         const fd = new FormData(e.target);
         const customData = Object.fromEntries(fd.entries())
-
-        fetch('http://localhost:3000/orders', {
+        
+       const fetchingData = fetch('http://localhost:3000/orders', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -31,10 +45,28 @@ export default function Checkout(){
                 }
             })
         })
+
+      setIsFetching(fetchingData)
+       
     }
 
 
-    const cssClases = "bg-neutral-600  rounded-md h-9 font-medium px-2 hover:text-neutral-400 hover:bg-stone-600 ";
+   
+
+
+
+    
+
+    /*if(isLoading){
+        actions = <h2 className=" text-center font-semibold">Sending other data..</h2>
+    }*/
+
+    if(isFetching ){
+        return <ModalDone onCLose={handleCLearShoes} onClick={handleCLearShoes}/>
+    }
+
+    
+    
         
         return(
             <Modal open={ctxCartShoes.progress === 'checkout' } onCLose={handleCloseModal}>
@@ -52,13 +84,19 @@ export default function Checkout(){
                     </div>
 
                     <div className=" gap-3 flex" >
-                        <button
-                            type="button" 
-                            onClick={handleCloseModal} 
-                            className=" bg-neutral-500 p-1  font-medium  hover:text-neutral-400" >
-                            Close
-                        </button>
-                        <button className = {cssClases}>Submit Order</button>
+                    <button
+                        type="button" 
+                        onClick={handleCloseModal} 
+                        className=" bg-neutral-500 p-1  font-medium  hover:text-neutral-400" >
+                        Close
+                    </button>
+
+                    <button 
+                            
+                        className = "bg-neutral-600  rounded-md h-9 font-medium px-2 hover:text-neutral-400 hover:bg-stone-600 ">
+                        Submit Order
+                    </button>
+
                     </div>
                 </form>     
             </Modal>

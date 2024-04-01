@@ -6,7 +6,8 @@ const ShoesCartProviderContex = React.createContext({
     showCart: () => {},
     hideCart: () => {},
     showCheckout: () => {},
-    hideCheckout: () => {}
+    hideCheckout: () => {},
+    showSucces: () => {}
 
 })
 
@@ -33,12 +34,17 @@ export function CartShoesProvider({children}){
         setCart('')
     }
 
+    function showSucces(){
+        setCart('succes')
+    }
+
     const UserProgress = {
         progress: cart,
         showCart,
         hideCart,
         showCheckout,
-        hideCheckout
+        hideCheckout, 
+        showSucces
     };
 
 
