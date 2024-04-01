@@ -4,7 +4,7 @@ import { CartFunctionProvider } from "./Store/ShoesCartContext.jsx";
 import { CartShoesProvider } from "./Store/CartShoesProvider.jsx";
 import Checkout from "./Components/Checkout.jsx";
 import Cart from "./Components/Cart.jsx";
-import ModalSucces from "./Components/UI/ModalSucces.jsx";
+
 function App() {
   return (
     
