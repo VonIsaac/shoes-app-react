@@ -12,11 +12,15 @@ export default function Cart(){
 
    
 
-    const totalCart = cxtContexTotal.items.reduce((totalPrice, item) =>  
-     totalPrice * item.price + item.quantity, 0)
+    /*const totalCart = cxtContexTotal.items.reduce((totalPrice, item) =>  
+     totalPrice * parseInt(item.price.split(",").join("")) + item.quantity, 0)*/
 
-    console.log("Total Cart:", totalCart)
+     const totalCart = cxtContexTotal.items.reduce((totalCheckout, item) => 
+      totalCheckout + item.quantity * parseInt(item.price.split(",").join("")), 0)
+        
 
+    console.log("Total Cart:", cxtContexTotal)
+  
 
       function handleCloseModal(){
         cxtCartProgres.hideCart()
@@ -27,7 +31,7 @@ export default function Cart(){
       }
 
       let noOrders
-      if(cxtContexTotal.items.length  === 0 ){
+      if(cxtContexTotal.items.length  === 0 ){ 
           noOrders = <p className=" text-center font-medium">NO ORDER. PLEASE SELECT ORDER</p>
       }
       

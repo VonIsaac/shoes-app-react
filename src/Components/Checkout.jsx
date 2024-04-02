@@ -4,18 +4,26 @@ import ShoesCartProviderContex from "../Store/CartShoesProvider.jsx";
 import Input from "./UI/Input.jsx";
 import ModalDone from "./UI/ModalDone.jsx";
 import React from "react";
-
+import Error from "./UI/Error.jsx";
 
 export default function Checkout(){
     const [isFetching, setIsFetching] = React.useState()
-   // const [isOpenModal, setIsOpenModal] = React.useState(true)
+    const [isLoading, setIsLoading] = React.useState(false)
+   const [error, setError] = React.useState()
+  
 
     
 
     const ctxCartShoes = React.useContext(ShoesCartProviderContex)
     const ctxContex = React.useContext(ShoesCartContex)
 
-    const shoesTotal = ctxContex.items.reduce((totalCheckout, item) => totalCheckout + item.quantity * item.price, 0)
+    const shoesTotal = ctxContex.items.reduce((totalCheckout, item) =>  
+    totalCheckout + item.quantity * parseInt(item.price.split(",").join("")), 0)
+        
+    console.log(shoesTotal)
+
+
+    
 
     function handleCloseModal(){
         ctxCartShoes.hideCheckout()
@@ -28,40 +36,55 @@ export default function Checkout(){
     }
 
  
-    function handleSubmit(e){
-        e.preventDefault()
-        const fd = new FormData(e.target);
-        const customData = Object.fromEntries(fd.entries())
-        
-       const fetchingData = fetch('http://localhost:3000/orders', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                order:{
-                    items: ctxContex.items,
-                    customer: customData
+    
+        async function handleSubmit(e){
+            e.preventDefault()
+            const fd = new FormData(e.target);
+            const customData = Object.fromEntries(fd.entries())
+                setIsLoading(true)
+                try{
+                    
+                    const fetchingData = await fetch('http://localhost:3000/orders', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            order:{
+                                items: ctxContex.items,
+                                customer: customData
+                            }
+                        })
+                    })
+                    setIsFetching(fetchingData)
+                }catch(err){
+                    setError(err.message || 'Something went Wrong')
                 }
-            })
-        })
+                setIsLoading(false) 
+           
+        }
+    
+     
+   
+   
+    let actions = <>
+          
+        <button
+            type="button" 
+            onClick={handleCloseModal} 
+            className=" bg-neutral-500 p-1  font-medium  hover:text-neutral-400" >
+            Close
+        </button>
 
-      setIsFetching(fetchingData)
-       
+        <button  className = "bg-neutral-600  rounded-md h-9 font-medium px-2 hover:text-neutral-400 hover:bg-stone-600 ">
+            Submit Order
+         </button>   
+    </>
+    if(isLoading){
+        actions = <h2 className=" text-center font-semibold">Sending other data..</h2>
     }
 
-
-   
-
-
-
-    
-
-    /*if(isLoading){
-        actions = <h2 className=" text-center font-semibold">Sending other data..</h2>
-    }*/
-
-    if(isFetching ){
+    if(isFetching && !error  ){
         return <ModalDone onCLose={handleCLearShoes} onClick={handleCLearShoes}/>
     }
 
@@ -82,22 +105,10 @@ export default function Checkout(){
                         <Input label= "Postal Code" type = "text" id= "postal-code" />
                         <Input label= "City" type = "text" id= "city" />
                     </div>
-
+                        {error && <Error title= "Failed to submit order" message={error} />}
                     <div className=" gap-3 flex" >
-                    <button
-                        type="button" 
-                        onClick={handleCloseModal} 
-                        className=" bg-neutral-500 p-1  font-medium  hover:text-neutral-400" >
-                        Close
-                    </button>
-
-                    <button 
-                            
-                        className = "bg-neutral-600  rounded-md h-9 font-medium px-2 hover:text-neutral-400 hover:bg-stone-600 ">
-                        Submit Order
-                    </button>
-
-                    </div>
+                        {actions}
+                    </div>    
                 </form>     
             </Modal>
         )
