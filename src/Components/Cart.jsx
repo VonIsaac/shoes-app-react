@@ -3,7 +3,7 @@ import React from "react"
 import ShoesCartContex from "../Store/ShoesCartContext.jsx";
 import ShoesCartProviderContex from "../Store/CartShoesProvider.jsx";
 import CartItem from "./CartItem.jsx";
-
+import { currencyFormatter } from "../UTIl/formatter.js";
 
 export default function Cart(){
      const cxtContexTotal = React.useContext(ShoesCartContex)
@@ -60,7 +60,7 @@ export default function Cart(){
                 ))}
             </ul>
                 
-             <p className=" py-6 text-center text-lg font-medium">₱{totalCart}</p>   
+             <p className=" py-6 text-center text-lg font-medium">{currencyFormatter.format(totalCart)}</p>   
                 
                   {noOrders}
 

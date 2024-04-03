@@ -5,6 +5,7 @@ import Input from "./UI/Input.jsx";
 import ModalDone from "./UI/ModalDone.jsx";
 import React from "react";
 import Error from "./UI/Error.jsx";
+import { currencyFormatter } from "../UTIl/formatter.js";
 
 export default function Checkout(){
     const [isFetching, setIsFetching] = React.useState()
@@ -44,7 +45,7 @@ export default function Checkout(){
                 setIsLoading(true)
                 try{
                     
-                    const fetchingData = await fetch('http://localhost:3000/orders', {
+                    const fetchingData = await fetch('http://localhost:3000/orderss', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -87,6 +88,8 @@ export default function Checkout(){
     if(isFetching && !error  ){
         return <ModalDone onCLose={handleCLearShoes} onClick={handleCLearShoes}/>
     }
+    
+   
 
     
     
@@ -95,7 +98,7 @@ export default function Checkout(){
             <Modal open={ctxCartShoes.progress === 'checkout' } onCLose={handleCloseModal}>
                <form onSubmit={handleSubmit} className=" p-2 font-medium">
                     <h2 className="  my-2 text-2xl">Checkout</h2>
-                    <p className=" font-normal pb-4">Total Amount: {shoesTotal}</p>
+                    <p className=" font-normal pb-4">Total Amount: {currencyFormatter.format(shoesTotal)}</p>
 
                     <Input label= "Full Name:" id="name" type ="text"  />
                     <Input label= "Email Adress:" type = "email" id= "email"/>
@@ -105,7 +108,7 @@ export default function Checkout(){
                         <Input label= "Postal Code" type = "text" id= "postal-code" />
                         <Input label= "City" type = "text" id= "city" />
                     </div>
-                        {error && <Error title= "Failed to submit order" message={error} />}
+                    {error  && <Error title= "Failed to submit order" message={error} />}
                     <div className=" gap-3 flex" >
                         {actions}
                     </div>    
@@ -114,3 +117,5 @@ export default function Checkout(){
         )
 
 }
+
+//      {error || !isFetching && <Error title= "Failed to submit order" message={error} />}
