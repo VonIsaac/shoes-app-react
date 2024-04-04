@@ -10,7 +10,7 @@ function App() {
     
     <CartShoesProvider>
       <CartFunctionProvider>
-            <main className=" bg-zinc-800 scroll-smooth max-h-full">
+            <main className="  scroll-smooth max-h-full">
               <Header />
               <Shoes />
               <Cart />
